@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
@@ -72,7 +73,12 @@ class KategoriController extends Controller
     }
 
     public function detail($id) {
-        $kategori = Kategori::findOrFail($id);
-        dd($kategori);
+        // $kategori = Kategori::with('Product')->where('id', $id);
+        $data = Kategori::findOrFail($id);
+        $kategori = DB::table('products')->where('categary_id',$id)->get();
+        return view('detail-kategori', [
+            'kategori' => $kategori,
+            'data' => $data
+        ]);
     }
 }

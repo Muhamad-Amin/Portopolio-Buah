@@ -54,7 +54,7 @@
 
                 <div class="head-bottom">
 
-                    <h1>Detail Kategori : </h1>
+                    <h1>Detail Kategori : {{ $data->Name }} </h1>
                 </div>
 
             </div>
@@ -63,6 +63,11 @@
 
                 <div class="isi">
 
+                    <ol>
+                        @foreach ($kategori as $item)
+                            <li>{{ $item->Name }}</li>
+                        @endforeach
+                    </ol>
 
                 </div>
 

@@ -115,12 +115,13 @@ section .content .main .isi {
 section .content .main .isi img {
     width: 105px;
     height: 105px;
-    float: right;
+    float: left;
     margin-left: 5px;
+    margin-right: 15px;
 }
 
 section .content .main .isi .keterangan {
-    height: 250px;
+    height: 220px;
     overflow: auto;
-    margin-top: 8px;
+    margin-top: 35px;
 }

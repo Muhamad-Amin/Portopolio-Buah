@@ -23,7 +23,7 @@ class Kategori extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function Produk(): HasMany
+    public function Product(): HasMany
     {
         return $this->hasMany(Product::class, 'categary_id ', 'id');
     }
